@@ -8,6 +8,7 @@
 
 #import "ToDoItemsListViewController.h"
 #import "ToDoItemsStore.h"
+#import <UIKit/UISwipeGestureRecognizer.h>
 
 @interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *summaryTextField;
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) id<ToDoItemsStoreProtocol> store;
 @property () int numberPriority;
 @property (strong) NSArray <NSString *> *captions;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *deleteSwipe;
+
 @end
 
 @implementation ToDoItemsListViewController
@@ -31,6 +34,11 @@
     self.captions = [[NSArray alloc] initWithObjects:@"Default", @"Low", @"High", @"Urgent",nil];
     
     [self changeCaptionPriority];
+    
+    self.deleteSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    //[self.tableView setEditing:YES animated:YES];
+    self.tableView.allowsMultipleSelection = NO;
 }
 
 #pragma mark - UITableViewDelegate
@@ -39,6 +47,15 @@
     ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
     item.isDone = !item.isDone;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];
+        ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
+        [self.store removeItem:item];
+        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -102,10 +119,7 @@
 }
 
 - (UIColor *) getColorWithPriority:(PriorityType)priority{
-    
-  // PriorityTypeLow,
-  //  ,
-  //  PriorityTypeHigh,
+
     UIColor *color = [UIColor clearColor];
     
     if (priority == PriorityTypeLow) {
@@ -118,5 +132,15 @@
 
     return color;
 }
+
+/*- (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *a = @"a";
+}
+ 
+
+- (IBAction)swipeLeft:(UISwipeGestureRecognizer *)sender {
+   NSString *a = @"a";
+}*/
+
 
 @end

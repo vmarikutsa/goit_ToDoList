@@ -55,12 +55,12 @@
                                                 <action selector="changePriority:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PA-KH-ysn"/>
                                             </connections>
                                         </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMK-Yk-8BT">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMK-Yk-8BT">
                                             <rect key="frame" x="365" y="7" width="83" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-RB-v2m">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-RB-v2m">
                                             <rect key="frame" x="8" y="7" width="353" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -99,6 +99,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tQf-L8-uyY" secondAttribute="bottom" id="4DF-qh-7wv"/>
                             <constraint firstAttribute="trailing" secondItem="tQf-L8-uyY" secondAttribute="trailing" id="aFj-Mw-MKK"/>
@@ -111,15 +112,25 @@
                                 <exclude reference="sa7-4N-jli"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="t7R-fH-Nis" appends="YES" id="1fw-R7-CD4"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="changePriorityBtn" destination="f70-Uw-dsJ" id="MLg-qA-05l"/>
+                        <outlet property="deleteSwipe" destination="t7R-fH-Nis" id="Qzs-qd-Nk2"/>
                         <outlet property="summaryTextField" destination="LMK-Yk-8BT" id="KPt-xW-JAf"/>
                         <outlet property="tableView" destination="tQf-L8-uyY" id="jIR-7n-QTQ"/>
                         <outlet property="titleTextFIeld" destination="dBU-RB-v2m" id="Tgm-Ae-lu7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="t7R-fH-Nis">
+                    <connections>
+                        <action selector="swipeLeft:" destination="BYZ-38-t0r" id="IOm-YU-bPZ"/>
+                        <outlet property="delegate" destination="tQf-L8-uyY" id="ZEC-sk-Csm"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="50" y="257"/>
         </scene>
