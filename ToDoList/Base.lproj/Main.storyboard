@@ -44,27 +44,52 @@
                                                 <action selector="didTouchAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu5-ii-XfM"/>
                                             </connections>
                                         </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-RB-v2m">
-                                            <rect key="frame" x="10" y="7" width="265" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f70-Uw-dsJ">
+                                            <rect key="frame" x="452" y="7" width="100" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="0nH-gZ-ME6"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="cnT-1M-uHK"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="changePriority:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PA-KH-ysn"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMK-Yk-8BT">
+                                            <rect key="frame" x="365" y="7" width="83" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMK-Yk-8BT">
-                                            <rect key="frame" x="285" y="7" width="265" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-RB-v2m">
+                                            <rect key="frame" x="8" y="7" width="353" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="centerY" secondItem="Pat-gA-tMm" secondAttribute="centerY" id="Eou-6n-s1p"/>
+                                        <constraint firstAttribute="bottom" secondItem="LMK-Yk-8BT" secondAttribute="bottom" constant="7" id="5lJ-qh-ycn"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="leading" secondItem="dBU-RB-v2m" secondAttribute="trailing" constant="4" id="9t5-Q7-9hR"/>
+                                        <constraint firstItem="f70-Uw-dsJ" firstAttribute="leading" secondItem="LMK-Yk-8BT" secondAttribute="trailing" constant="4" id="DEX-Vg-VAp"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="leading" secondItem="dBU-RB-v2m" secondAttribute="trailing" constant="4" id="DMd-yS-f9u"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="top" secondItem="Pat-gA-tMm" secondAttribute="top" constant="7" id="KOC-BY-q90"/>
+                                        <constraint firstItem="YFU-YZ-QPf" firstAttribute="leading" secondItem="f70-Uw-dsJ" secondAttribute="trailing" constant="8" id="NWt-l9-Mfw"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="top" secondItem="Pat-gA-tMm" secondAttribute="top" constant="7" id="Nim-Bn-yej"/>
                                         <constraint firstItem="YFU-YZ-QPf" firstAttribute="centerY" secondItem="Pat-gA-tMm" secondAttribute="centerY" id="QfG-Ha-1bu"/>
-                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="centerY" secondItem="Pat-gA-tMm" secondAttribute="centerY" id="XcM-wE-62X"/>
+                                        <constraint firstAttribute="bottom" secondItem="LMK-Yk-8BT" secondAttribute="bottom" constant="7" id="SMG-dT-cAJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="dBU-RB-v2m" secondAttribute="bottom" constant="7" id="YaR-TK-Qcz"/>
+                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="leading" secondItem="Pat-gA-tMm" secondAttribute="leading" constant="8" id="bSG-Ur-ifu"/>
                                         <constraint firstAttribute="trailing" secondItem="YFU-YZ-QPf" secondAttribute="trailing" constant="10" id="btb-ad-WTX"/>
-                                        <constraint firstItem="YFU-YZ-QPf" firstAttribute="leading" secondItem="LMK-Yk-8BT" secondAttribute="trailing" constant="10" id="hoh-Sx-9By"/>
-                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="width" secondItem="LMK-Yk-8BT" secondAttribute="width" id="i31-Xh-F0c"/>
-                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="leading" secondItem="dBU-RB-v2m" secondAttribute="trailing" constant="10" id="p42-qw-cud"/>
-                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="leading" secondItem="Pat-gA-tMm" secondAttribute="leading" constant="10" id="wex-Qo-mcx"/>
+                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="top" secondItem="Pat-gA-tMm" secondAttribute="top" constant="7" id="cgW-bc-k7y"/>
+                                        <constraint firstItem="f70-Uw-dsJ" firstAttribute="leading" secondItem="LMK-Yk-8BT" secondAttribute="trailing" constant="4" id="eNg-by-gLe"/>
+                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="leading" secondItem="Pat-gA-tMm" secondAttribute="leading" constant="8" id="go4-eU-p1B"/>
+                                        <constraint firstAttribute="bottom" secondItem="dBU-RB-v2m" secondAttribute="bottom" constant="7" id="iad-hb-2a0"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="leading" secondItem="dBU-RB-v2m" secondAttribute="trailing" constant="4" id="jdD-iX-npe"/>
+                                        <constraint firstItem="dBU-RB-v2m" firstAttribute="top" secondItem="Pat-gA-tMm" secondAttribute="top" constant="7" id="noV-gL-Khn"/>
+                                        <constraint firstItem="LMK-Yk-8BT" firstAttribute="leading" secondItem="dBU-RB-v2m" secondAttribute="trailing" constant="4" id="qFb-Me-Wpz"/>
+                                        <constraint firstItem="f70-Uw-dsJ" firstAttribute="top" secondItem="Pat-gA-tMm" secondAttribute="top" constant="7" id="qnJ-KK-pY2"/>
+                                        <constraint firstItem="f70-Uw-dsJ" firstAttribute="leading" secondItem="LMK-Yk-8BT" secondAttribute="trailing" constant="4" id="uWn-kd-D1K"/>
+                                        <constraint firstAttribute="bottom" secondItem="f70-Uw-dsJ" secondAttribute="bottom" constant="7" id="y6Z-px-eQb"/>
                                     </constraints>
                                 </view>
                                 <connections>
@@ -88,6 +113,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="changePriorityBtn" destination="f70-Uw-dsJ" id="MLg-qA-05l"/>
                         <outlet property="summaryTextField" destination="LMK-Yk-8BT" id="KPt-xW-JAf"/>
                         <outlet property="tableView" destination="tQf-L8-uyY" id="jIR-7n-QTQ"/>
                         <outlet property="titleTextFIeld" destination="dBU-RB-v2m" id="Tgm-Ae-lu7"/>

@@ -8,6 +8,23 @@
 
 #import "ToDoItem.h"
 
+@implementation NSString (priorityType)
+
+- (PriorityType) priorityType {
+    if ([self isEqualToString : @"Low"]) {
+        return PriorityTypeLow;
+    } else if ([self isEqualToString : @"Default"]) {
+        return PriorityTypeDefault;
+    } else if ([self isEqualToString : @"High"]) {
+        return PriorityTypeHigh;
+    } else if ([self isEqualToString : @"Urgent"]) {
+        return PriorityTypeUrgent;
+    } else {
+        return PriorityTypeDefault;
+    }
+}
+@end
+
 @implementation ToDoItem
 
 @end
