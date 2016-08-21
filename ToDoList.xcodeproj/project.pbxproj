@@ -17,6 +17,8 @@
 		418FAB5B1D5B911400E0F8A7 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB5A1D5B911400E0F8A7 /* ToDoItem.m */; };
 		418FAB5E1D5B925500E0F8A7 /* ToDoItemsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB5D1D5B925500E0F8A7 /* ToDoItemsStore.m */; };
 		418FAB621D5B984100E0F8A7 /* ToDoItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */; };
+		63C4BC9F1D69E5EA00E58DE2 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */; };
+		63C4BCA21D6A0B9600E58DE2 /* PriorityTypeUrgent.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		418FAB5D1D5B925500E0F8A7 /* ToDoItemsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsStore.m; sourceTree = "<group>"; };
 		418FAB601D5B984100E0F8A7 /* ToDoItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemsListViewController.h; sourceTree = "<group>"; };
 		418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsListViewController.m; sourceTree = "<group>"; };
+		63C4BC9D1D69E5EA00E58DE2 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeUrgent.png; path = ../../../../../../../Desktop/PriorityTypeUrgent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,7 @@
 		418FAB321D5B908600E0F8A7 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				63C4BCA01D6A06EC00E58DE2 /* Assets */,
 				418FAB5F1D5B981600E0F8A7 /* ViewControllers */,
 				418FAB581D5B90EC00E0F8A7 /* Model */,
 				418FAB361D5B908600E0F8A7 /* AppDelegate.h */,
@@ -138,8 +144,18 @@
 			children = (
 				418FAB601D5B984100E0F8A7 /* ToDoItemsListViewController.h */,
 				418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */,
+				63C4BC9D1D69E5EA00E58DE2 /* MyCell.h */,
+				63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		63C4BCA01D6A06EC00E58DE2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				418FAB431D5B908600E0F8A7 /* LaunchScreen.storyboard in Resources */,
+				63C4BCA21D6A0B9600E58DE2 /* PriorityTypeUrgent.png in Resources */,
 				418FAB401D5B908600E0F8A7 /* Assets.xcassets in Resources */,
 				418FAB3E1D5B908600E0F8A7 /* Main.storyboard in Resources */,
 			);
@@ -248,6 +265,7 @@
 				418FAB5E1D5B925500E0F8A7 /* ToDoItemsStore.m in Sources */,
 				418FAB351D5B908600E0F8A7 /* main.m in Sources */,
 				418FAB621D5B984100E0F8A7 /* ToDoItemsListViewController.m in Sources */,
+				63C4BC9F1D69E5EA00E58DE2 /* MyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

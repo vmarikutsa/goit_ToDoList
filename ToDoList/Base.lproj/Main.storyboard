@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-L8-uyY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-L8-uyY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Pat-gA-tMm">
@@ -92,6 +92,45 @@
                                         <constraint firstAttribute="bottom" secondItem="f70-Uw-dsJ" secondAttribute="bottom" constant="7" id="y6Z-px-eQb"/>
                                     </constraints>
                                 </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="64" id="OJS-9A-Mhs" customClass="MyCell">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OJS-9A-Mhs" id="ZXI-wR-XV2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-7g-Pu5">
+                                                    <rect key="frame" x="8" y="0.0" width="508" height="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRJ-ZA-amL">
+                                                    <rect key="frame" x="8" y="34" width="508" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="755-D3-JE6">
+                                                    <rect key="frame" x="524" y="0.0" width="68" height="63"/>
+                                                    <connections>
+                                                        <action selector="touchChangePriorityButton:" destination="OJS-9A-Mhs" eventType="touchUpInside" id="Ijq-7x-VKw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="755-D3-JE6" secondAttribute="trailing" constant="22" id="7fA-tF-6hZ"/>
+                                                <constraint firstItem="755-D3-JE6" firstAttribute="leading" secondItem="WRJ-ZA-amL" secondAttribute="trailing" constant="8" id="AGP-Oe-d4X"/>
+                                                <constraint firstItem="755-D3-JE6" firstAttribute="leading" secondItem="f0o-7g-Pu5" secondAttribute="trailing" constant="8" id="PfI-sn-T3I"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="changePriorityButton" destination="755-D3-JE6" id="t0D-Q5-7qm"/>
+                                            <outlet property="summaryLabel" destination="WRJ-ZA-amL" id="1nV-lY-ZGI"/>
+                                            <outlet property="titleTextField" destination="f0o-7g-Pu5" id="s82-CH-zAj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="AaV-Ba-DKN"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="RXX-gC-arE"/>

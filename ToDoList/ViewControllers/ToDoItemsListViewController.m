@@ -9,8 +9,9 @@
 #import "ToDoItemsListViewController.h"
 #import "ToDoItemsStore.h"
 #import <UIKit/UISwipeGestureRecognizer.h>
+#import "MyCell.h"
 
-@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate>
+@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate, MyCellDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *summaryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextFIeld;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -19,7 +20,6 @@
 @property () int numberPriority;
 @property (strong) NSArray <NSString *> *captions;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *deleteSwipe;
-
 @end
 
 @implementation ToDoItemsListViewController
@@ -40,6 +40,45 @@
     //[self.tableView setEditing:YES animated:YES];
     self.tableView.allowsMultipleSelection = NO;
 }
+
+- (void) touchedPriorityChangeButton:(MyCell *)cell{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    ToDoItem *currentItem = [[self.store items] objectAtIndex:indexPath.row];
+    
+    currentItem.priority = [self getNextPriority:currentItem.priority];
+    
+    //[cell.changePriorityButton setImage:[self getImageWithPriority:currentItem.priority] forState:UIControlStateNormal];
+    
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (PriorityType) getNextPriority:(PriorityType)currentpriority {
+    PriorityType newPriority = PriorityTypeDefault;
+    if (currentpriority == PriorityTypeDefault) {
+        newPriority = PriorityTypeLow;
+    } else if (currentpriority == PriorityTypeLow) {
+        newPriority = PriorityTypeHigh;
+    } else if (currentpriority == PriorityTypeHigh) {
+        newPriority = PriorityTypeUrgent;
+    } else if (currentpriority == PriorityTypeUrgent) {
+        newPriority = PriorityTypeDefault;
+    } else {
+        newPriority = PriorityTypeDefault;
+    }
+    
+    return newPriority;
+}
+
+- (UIImage*) getImageWithPriority:(PriorityType)priority {
+    UIImage *image;
+    
+    image = [[UIImage imageNamed:@"PriorityTypeUrgent"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    return image;
+}
+
 
 #pragma mark - UITableViewDelegate
 
@@ -65,16 +104,29 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyCell"];
     }
     ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.summary;
-    cell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    //cell.textLabel.text = item.title;
+    //cell.detailTextLabel.text = item.summary;
+    MyCell *myCell = (MyCell *) cell;
+    myCell.titleTextField.text = item.title;
+    myCell.summaryLabel.text = item.summary;
+    
+    /*cell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     cell.backgroundColor = [self getColorWithPriority:item.priority];
-    return cell;
+    return cell;*/
+    
+    myCell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    myCell.backgroundColor = [self getColorWithPriority:item.priority];
+    myCell.titleTextField.backgroundColor = [self getColorWithPriority:item.priority];
+    [myCell.changePriorityButton setImage:[self getImageWithPriority:item.priority] forState:UIControlStateNormal];
+    myCell.delegate = self;
+    return myCell;
 }
 
 #pragma mark - Actions
