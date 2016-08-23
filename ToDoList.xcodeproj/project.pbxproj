@@ -54,10 +54,10 @@
 		418FAB5D1D5B925500E0F8A7 /* ToDoItemsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsStore.m; sourceTree = "<group>"; };
 		418FAB601D5B984100E0F8A7 /* ToDoItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemsListViewController.h; sourceTree = "<group>"; };
 		418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsListViewController.m; sourceTree = "<group>"; };
-		632AE7121D6C673C00EAFD46 /* PriorityTypeDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeDefault.png; path = ../../../../../../../Desktop/PriorityTypeDefault.png; sourceTree = "<group>"; };
-		632AE7141D6C69C500EAFD46 /* PriorityTypeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeHigh.png; path = ../../../../../../../Desktop/PriorityTypeHigh.png; sourceTree = "<group>"; };
-		632AE7151D6C69C500EAFD46 /* PriorityTypeUrgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeUrgent.png; path = ../../../../../../../Desktop/PriorityTypeUrgent.png; sourceTree = "<group>"; };
-		632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeLow.png; path = ../../../../../../../Desktop/PriorityTypeLow.png; sourceTree = "<group>"; };
+		632AE7121D6C673C00EAFD46 /* PriorityTypeDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriorityTypeDefault.png; sourceTree = "<group>"; };
+		632AE7141D6C69C500EAFD46 /* PriorityTypeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriorityTypeHigh.png; sourceTree = "<group>"; };
+		632AE7151D6C69C500EAFD46 /* PriorityTypeUrgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriorityTypeUrgent.png; sourceTree = "<group>"; };
+		632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriorityTypeLow.png; sourceTree = "<group>"; };
 		63C4BC9D1D69E5EA00E58DE2 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +165,7 @@
 				632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */,
 			);
 			name = Assets;
+			path = Assets.xcassets/Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
