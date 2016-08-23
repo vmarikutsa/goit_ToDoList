@@ -14,6 +14,8 @@
 
 - (void) touchedPriorityChangeButton:(MyCell *)cell;
 
+- (void) editingTitleCell:(MyCell *) cell;
+
 @end
 
 @interface MyCell : UITableViewCell

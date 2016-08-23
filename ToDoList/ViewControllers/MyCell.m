@@ -23,5 +23,8 @@
 - (IBAction)touchChangePriorityButton:(UIButton *)sender {
    [self.delegate touchedPriorityChangeButton:self];
 }
+- (IBAction)changeTitleAfterEditing:(UITextField *)sender {
+    [self.delegate editingTitleCell:self];
+}
 
 @end

@@ -87,6 +87,15 @@
     return image;
 }
 
+- (void) editingTitleCell:(MyCell *)cell {
+    NSString *newTitle = cell.titleTextField.text;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    ToDoItem *currentItem = [[self.store items] objectAtIndex:indexPath.row];
+    
+    currentItem.title = newTitle;
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -130,8 +139,12 @@
     return cell;*/
     
     myCell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    myCell.backgroundColor = [self getColorWithPriority:item.priority];
-    myCell.titleTextField.backgroundColor = [self getColorWithPriority:item.priority];
+    //myCell.backgroundColor = [self getColorWithPriority:item.priority];
+    //myCell.titleTextField.backgroundColor = [self getColorWithPriority:item.priority];
+    
+    myCell.summaryLabel.textColor = [self getColorWithPriority:item.priority];
+    myCell.titleTextField.textColor = [self getColorWithPriority:item.priority];
+    
     [myCell.changePriorityButton setImage:[self getImageWithPriority:item.priority] forState:UIControlStateNormal];
     myCell.delegate = self;
     return myCell;
@@ -180,10 +193,11 @@
 
 - (UIColor *) getColorWithPriority:(PriorityType)priority{
 
-    UIColor *color = [UIColor clearColor];
+    //UIColor *color = [UIColor clearColor];
+    UIColor *color = [UIColor blueColor];
     
     if (priority == PriorityTypeLow) {
-        color = [UIColor yellowColor];
+        color = [UIColor greenColor];
     } else if (priority == PriorityTypeHigh) {
         color = [UIColor orangeColor];
     } else if(priority == PriorityTypeUrgent) {
