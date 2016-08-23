@@ -17,8 +17,11 @@
 		418FAB5B1D5B911400E0F8A7 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB5A1D5B911400E0F8A7 /* ToDoItem.m */; };
 		418FAB5E1D5B925500E0F8A7 /* ToDoItemsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB5D1D5B925500E0F8A7 /* ToDoItemsStore.m */; };
 		418FAB621D5B984100E0F8A7 /* ToDoItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */; };
+		632AE7131D6C673C00EAFD46 /* PriorityTypeDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 632AE7121D6C673C00EAFD46 /* PriorityTypeDefault.png */; };
+		632AE7171D6C69C500EAFD46 /* PriorityTypeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 632AE7141D6C69C500EAFD46 /* PriorityTypeHigh.png */; };
+		632AE7181D6C69C500EAFD46 /* PriorityTypeUrgent.png in Resources */ = {isa = PBXBuildFile; fileRef = 632AE7151D6C69C500EAFD46 /* PriorityTypeUrgent.png */; };
+		632AE7191D6C69C500EAFD46 /* PriorityTypeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = 632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */; };
 		63C4BC9F1D69E5EA00E58DE2 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */; };
-		63C4BCA21D6A0B9600E58DE2 /* PriorityTypeUrgent.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +54,12 @@
 		418FAB5D1D5B925500E0F8A7 /* ToDoItemsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsStore.m; sourceTree = "<group>"; };
 		418FAB601D5B984100E0F8A7 /* ToDoItemsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemsListViewController.h; sourceTree = "<group>"; };
 		418FAB611D5B984100E0F8A7 /* ToDoItemsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemsListViewController.m; sourceTree = "<group>"; };
+		632AE7121D6C673C00EAFD46 /* PriorityTypeDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeDefault.png; path = ../../../../../../../Desktop/PriorityTypeDefault.png; sourceTree = "<group>"; };
+		632AE7141D6C69C500EAFD46 /* PriorityTypeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeHigh.png; path = ../../../../../../../Desktop/PriorityTypeHigh.png; sourceTree = "<group>"; };
+		632AE7151D6C69C500EAFD46 /* PriorityTypeUrgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeUrgent.png; path = ../../../../../../../Desktop/PriorityTypeUrgent.png; sourceTree = "<group>"; };
+		632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeLow.png; path = ../../../../../../../Desktop/PriorityTypeLow.png; sourceTree = "<group>"; };
 		63C4BC9D1D69E5EA00E58DE2 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		63C4BC9E1D69E5EA00E58DE2 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
-		63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PriorityTypeUrgent.png; path = ../../../../../../../Desktop/PriorityTypeUrgent.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +159,10 @@
 		63C4BCA01D6A06EC00E58DE2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				63C4BCA11D6A0B9600E58DE2 /* PriorityTypeUrgent.png */,
+				632AE7121D6C673C00EAFD46 /* PriorityTypeDefault.png */,
+				632AE7141D6C69C500EAFD46 /* PriorityTypeHigh.png */,
+				632AE7151D6C69C500EAFD46 /* PriorityTypeUrgent.png */,
+				632AE7161D6C69C500EAFD46 /* PriorityTypeLow.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -238,8 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632AE7181D6C69C500EAFD46 /* PriorityTypeUrgent.png in Resources */,
+				632AE7131D6C673C00EAFD46 /* PriorityTypeDefault.png in Resources */,
 				418FAB431D5B908600E0F8A7 /* LaunchScreen.storyboard in Resources */,
-				63C4BCA21D6A0B9600E58DE2 /* PriorityTypeUrgent.png in Resources */,
+				632AE7171D6C69C500EAFD46 /* PriorityTypeHigh.png in Resources */,
+				632AE7191D6C69C500EAFD46 /* PriorityTypeLow.png in Resources */,
 				418FAB401D5B908600E0F8A7 /* Assets.xcassets in Resources */,
 				418FAB3E1D5B908600E0F8A7 /* Main.storyboard in Resources */,
 			);

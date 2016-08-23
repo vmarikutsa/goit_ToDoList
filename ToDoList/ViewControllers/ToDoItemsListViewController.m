@@ -73,9 +73,17 @@
 
 - (UIImage*) getImageWithPriority:(PriorityType)priority {
     UIImage *image;
-    
-    image = [[UIImage imageNamed:@"PriorityTypeUrgent"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
+    NSString *imageName;
+    if (priority == PriorityTypeUrgent) {
+        imageName = @"PriorityTypeUrgent";
+    } else if (priority == PriorityTypeHigh) {
+        imageName = @"PriorityTypeHigh";
+    } else if (priority == PriorityTypeLow) {
+        imageName = @"PriorityTypeLow";
+    } else  {
+        imageName = @"PriorityTypeDefault";
+    };
+    image = [[UIImage imageNamed:imageName]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     return image;
 }
 
